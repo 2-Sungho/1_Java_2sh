@@ -39,6 +39,9 @@ public class VariableExample5 {
 		System.out.println("줄이 바뀌었나요?");
 		
 		System.out.println("업로드 test");
+		
+		//새로운 주석달기
+		
 	}
 
 }
