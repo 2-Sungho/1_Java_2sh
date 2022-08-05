@@ -15,6 +15,9 @@ public class JavaTest {
 		System.out.println("println()은 한줄 출력입니다.");
 		System.out.println( 100+200+300+400 );
 		
+		System.out.println("github");
+		System.out.println("github 어려워");
+		
 	}	
 	
 }
