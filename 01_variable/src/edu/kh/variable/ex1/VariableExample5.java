@@ -35,8 +35,10 @@ public class VariableExample5 {
 		System.out.printf("%s님은 %d세 %c성 , 키는 %.1f입니다 (%b)\n"
 				,name, age,gender, height, tf);
 		// \n : 줄바꿈(개행)을 나타내는 탈출(escape)문자
-		
+			
 		System.out.println("줄이 바뀌었나요?");
+		
+		System.out.println("업로드 test");
 	}
 
 }
