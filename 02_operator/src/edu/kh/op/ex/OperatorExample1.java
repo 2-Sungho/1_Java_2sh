@@ -28,8 +28,6 @@ public class OperatorExample1 {
 		
 		
 		
-		
-		
 	}
 		
 		
