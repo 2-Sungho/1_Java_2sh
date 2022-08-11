@@ -162,7 +162,7 @@ public class BranchExample {
 					break; // while문 종료
 				}
 			}
-			count++;
+			count++; // 증감식
 		}
 	}
 }
