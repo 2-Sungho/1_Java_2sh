@@ -235,8 +235,7 @@ public class ArrayPractice {
 		System.out.println("더 값을 입력하시겠습니까?(Y/N)");
 		String yn=sc.next();
 		if(yn.equals("Y")) {
-			System.out.print("더 입력하고 싶은 개수: ");
-			int size2=sc.nextInt();
+			System.out.print("더 입력하고 싶은 개수: \n");
 			sc.nextLine();
 			for(int i=0;i<arr.length;i++) {
 				System.out.print(i+size+"번째 문자열: ");
