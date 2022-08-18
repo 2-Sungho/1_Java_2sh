@@ -235,12 +235,58 @@ public class ArrayPractice {
 		System.out.println("더 값을 입력하시겠습니까?(Y/N)");
 		String yn=sc.next();
 		if(yn.equals("Y")) {
-			System.out.print("더 입력하고 싶은 개수: \n");
-			sc.nextLine();
-			for(int i=0;i<arr.length;i++) {
-				System.out.print(i+size+"번째 문자열: ");
+			System.out.print("더 입력하고 싶은 개수: ");
+			int input=sc.nextInt();
+			for(int i=0;i<input;i++) {
+				System.out.print(i+1+size+"번째 문자열: ");
 				arr[i]=sc.nextLine();
+			} 
+		}
+		
+	}
+	
+	public void practice15() {
+		int[][] arr=new int[3][3];
+		for(int row=0;row<arr.length;row++) {
+			for(int col=0;col<arr[row].length;col++) {
+				System.out.printf("(%d,%d) ",row,col);
 			}
+			System.out.println();
+		}
+	}
+	
+	public void practice16() {
+		
+		int[][] arr= {{1,2,3,4},{5,6,7,8,},{9,10,11,12},{13,14,15,16}}; // 선언모르겟다
+		for(int row=0;row<arr.length;row++) {
+			for(int col=0;col<arr[row].length;col++) {
+				System.out.printf("%3d",arr[row][col]);
+			}
+			System.out.println();
+		}
+	}
+	
+	public void practice17() {
+		
+	}
+	
+	public void practice18() {
+		int[][] arr=new int[4][4];
+		
+		for(int row=0;row<arr.length-1;row++) {
+			for(int col=0;col<arr[row].length-1;col++) {
+				int ran=(int)(Math.random()*10+1);
+				arr[row][col]=ran; // 난수 대입
+				arr[row][arr[row].length-1] += ran; // 각 행의 마지막 열
+				arr[arr.length-1][col] += ran; // 각 열의 마지막 행
+				arr[arr.length-1][arr[row].length-1] += ran; // 마지막 행,열
+			}
+		}
+		for(int row=0;row<arr.length;row++) {
+			for(int col=0;col<arr[row].length;col++) {
+				System.out.printf("%3d",arr[row][col]);
+			}
+			System.out.println();
 		}
 		
 	}
