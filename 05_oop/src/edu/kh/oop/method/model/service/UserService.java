@@ -40,4 +40,13 @@ public class UserService {
 		}
 		
 	}
+	
+	// 회원 정보 수정 Service
+	public void updateUser(String name, int age, char gender, User loginUser2) {
+		
+		loginUser2.setUserName(name);
+		loginUser2.setUserAge(age);
+		loginUser2.setUserGender(gender);
+		
+	}
 }
