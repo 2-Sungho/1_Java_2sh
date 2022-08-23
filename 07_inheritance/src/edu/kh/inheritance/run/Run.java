@@ -8,6 +8,7 @@ public class Run {
 		
 		Example e=new Example();
 		
-		e.ex1();
+//		e.ex1();
+		e.ex2();
 	}
 }
