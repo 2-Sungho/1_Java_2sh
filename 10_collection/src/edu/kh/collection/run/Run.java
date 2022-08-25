@@ -1,6 +1,7 @@
 package edu.kh.collection.run;
 
 import edu.kh.collection.model.service.ListService;
+import edu.kh.collection.model.service.SetService;
 import edu.kh.collection.view.StudentView;
 
 public class Run {
@@ -13,7 +14,13 @@ public class Run {
 		
 		StudentView view=new StudentView();
 		
-		view.displayMenu();
+//		view.displayMenu();
+		
+		SetService service2=new SetService();
+		
+//		service2.ex1();
+//		service2.ex2();
+		service2.ex3();
 	}
 
 }
