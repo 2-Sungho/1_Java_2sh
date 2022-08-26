@@ -6,7 +6,13 @@ import java.util.Set;
 import java.util.TreeSet;
 
 import edu.kh.collection.model.vo.Student;
-
+/* collection: 자바의 자료구조 모음(객체만 저장가능)
+ * *List: 순서유지(인덱스O), 중복데이터O
+ * Set: 순서X(인덱스X), 중복데이터X -> equals(),hashCode() 오버라이딩 필요
+ * <제네릭>: 향상된 for문 
+ * for(참조변수:배열또는컬렉션)
+ * Iterator(반복자)
+ */
 public class SetService {
 	
 	/* Set(집합)
@@ -138,6 +144,6 @@ public class SetService {
 			int ran=(int)(Math.random()*45+1); // 1~45 난수
 			lotto.add(ran);
 		}
-		System.out.println(lotto);
+		System.out.println(lotto); // 로또 번호 출력
 	}
 }
