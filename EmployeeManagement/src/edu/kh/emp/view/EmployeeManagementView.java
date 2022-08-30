@@ -35,7 +35,7 @@ public class EmployeeManagementView {
 				break;
 			case 2: this.sellectAll();
 				break;
-			case 3: 
+			case 3: this.selectEmpIds();
 				break;
 			case 4: 
 				break;
@@ -104,5 +104,23 @@ public class EmployeeManagementView {
 		}
 	}
 	
-	
+	/**
+	 * 사원으로 사원정보조회 메서드
+	 */
+	public void selectEmpIds() {
+		System.out.println("==사번이 일치하는 사원 정보 조회==");
+		
+		System.out.print("사번 입력: ");
+		int idx=sc.nextInt();
+		sc.nextLine();
+		
+		List<Employee> resultList=service.selectEmpId(idx);
+		if(resultList.isEmpty()) {
+			System.out.println("검색 결과가 없습니다.");
+		}else {
+			for(Employee e:resultList) {
+				System.out.println(e);
+			}
+		}
+	}
 }

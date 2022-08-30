@@ -1,5 +1,7 @@
 package edu.kh.emp.model.vo;
 
+import java.util.Objects;
+
 public class Employee {
 
 	private int empId; // 사원 번호(사번)
@@ -90,5 +92,33 @@ public class Employee {
 	public void setSalary(int salary) {
 		this.salary = salary;
 	}
+
+	@Override
+	public String toString() {
+		return "Employee [empId=" + empId + ", empName=" + empName + ", empNo=" + empNo + ", email=" + email
+				+ ", phone=" + phone + ", departmentTitle=" + departmentTitle + ", jobName=" + jobName + ", salary="
+				+ salary + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(departmentTitle, email, empId, empName, empNo, jobName, phone, salary);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Employee other = (Employee) obj;
+		return Objects.equals(departmentTitle, other.departmentTitle) && Objects.equals(email, other.email)
+				&& empId == other.empId && Objects.equals(empName, other.empName) && Objects.equals(empNo, other.empNo)
+				&& Objects.equals(jobName, other.jobName) && Objects.equals(phone, other.phone)
+				&& salary == other.salary;
+	}
+	
 	
 }
