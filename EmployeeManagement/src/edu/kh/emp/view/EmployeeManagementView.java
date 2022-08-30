@@ -37,7 +37,7 @@ public class EmployeeManagementView {
 				break;
 			case 3: this.selectEmpIds();
 				break;
-			case 4: 
+			case 4: this.updateEmp();
 				break;
 			case 5: 
 				break;
@@ -121,6 +121,26 @@ public class EmployeeManagementView {
 			for(Employee e:resultList) {
 				System.out.println(e);
 			}
+		}
+	}
+	
+	public void updateEmp() {
+		System.out.println("==사번이 일치하는 사원 정보 수정==");
+		
+		System.out.print("사번 입력: ");
+		int empId=sc.nextInt();
+		sc.nextLine();
+		
+		System.out.print("수정할 이메일: ");
+		String email=sc.nextLine();
+		
+		System.out.println("수정할 전화번호: ");
+		String phone=sc.nextLine();
+		
+		if(service.updateEmp(empId,email,phone)) {
+			System.out.println("성공");
+		}else {
+			System.out.println("실패(사번 불일치)");
 		}
 	}
 }

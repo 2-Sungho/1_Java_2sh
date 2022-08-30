@@ -29,6 +29,16 @@ public class EmployeeService {
 		}
 		return resultList;
 	}
+
+	public boolean updateEmp(int empId, String email, String phone) {
+		if(empId<0||empId>=empList.size()) {
+			return false;
+		}else {
+			empList.get(empId).setEmail(email);
+			empList.get(empId).setPhone(phone);
+			return true;
+		}
+	}
 	
 	
 
