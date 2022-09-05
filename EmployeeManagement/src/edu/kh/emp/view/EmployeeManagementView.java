@@ -39,13 +39,13 @@ public class EmployeeManagementView {
 				break;
 			case 4: this.updateEmp();
 				break;
-			case 5: 
+			case 5: this.removeEmp();
 				break;
-			case 6: 
+			case 6: this.selectdepartmentTitle();
 				break;
-			case 7: 
+			case 7: this.selectSalary();
 				break;
-			case 8: 
+			case 8: this.departmentTitleSumSalary();
 				break;
 			case 0: System.out.println("프로그램 종료");
 				break;
@@ -54,6 +54,7 @@ public class EmployeeManagementView {
 		}while(input!=0);
 		
 	}
+
 
 	/**
 	 * 새로운 사원 추가 메서드
@@ -118,8 +119,8 @@ public class EmployeeManagementView {
 		if(resultList.isEmpty()) {
 			System.out.println("검색 결과가 없습니다.");
 		}else {
-			for(Employee e:resultList) {
-				System.out.println(e);
+			for(Employee emp:resultList) {
+				System.out.println(emp);
 			}
 		}
 	}
@@ -142,5 +143,57 @@ public class EmployeeManagementView {
 		}else {
 			System.out.println("실패(사번 불일치)");
 		}
+	}
+	public void removeEmp() {
+		System.out.println("==사번이 일치하는 사원 정보 삭제==");
+		
+		System.out.print("사번 입력: ");
+		int empId=sc.nextInt();
+		sc.nextLine();
+		
+		Employee emp=service.removeEmp(empId);
+		if(emp==null) {
+			System.out.println("실패(사번 불일치)");
+		}else {
+			System.out.println(emp.getEmpName()+"사원의 정보가 삭제되었습니다.");
+		}
+	}
+	/**
+	 * 입력 받은 부서와 일치 모든 사원 정보 조회
+	 */
+	public void selectdepartmentTitle() {
+		System.out.println("==입력 받은 부서와 일치 모든 사원 정보 조회==");
+		
+		System.out.print("부서명 입력: ");
+		String departmentTitle=sc.nextLine();
+		
+		List<Employee> resultList=service.sellctDepartmentTitle(departmentTitle);
+		if(resultList.isEmpty()) {
+			System.out.println("검색 결과가 없습니다.");
+		}else {
+			for(Employee emp:resultList) {
+				System.out.println(emp);
+			}
+		}
+	}
+	public void selectSalary() {
+		System.out.println("==입력 받은 급여 이상을 받는 모든 사원 정보 조회==");
+		
+		System.out.print("급여 입력: ");
+		int salary=sc.nextInt();
+		sc.nextLine();
+		
+		List<Employee> resultList=service.selectSalary(salary);
+		if(resultList.isEmpty()) {
+			System.out.println("검색 결과가 없습니다.");
+		}else {
+			for(Employee emp:resultList) {
+				System.out.println(emp);
+			}
+		}
+	}
+	private void departmentTitleSumSalary() {
+		System.out.println("==부서별 급여 합 전체 조회==");
+		
 	}
 }
